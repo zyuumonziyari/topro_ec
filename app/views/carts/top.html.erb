@@ -1,0 +1,53 @@
+<div class="cart-top-wrapper">
+ <div class="cart-top-container">
+  <h1>ショッピングカート</h1>
+  </div>
+</div>
+
+<div class="cart-main-wrapper">
+ <div class="cart-main-container">
+
+ <% @sum = 0 %>
+ <% @cart_product.each do |cart| %>
+  <section class="cart-content">
+   <div class="cart-left">
+    <img src="<%= "/logo_img/#{cart.products.img_name}"%>" width="140" height="140" class= "cart-product-img">
+   </div>
+
+   <div class="cart-right">
+    <h3 class="cart-name"><%= cart.products.name %> </h3>
+    <div class="cart-action">
+    </div>
+    <div class="cart-tastebox">
+    </div>
+    <div class="cart-price">
+    <P>計<%= cart.products.price %> 円 （税込）</P>
+    </div>
+    <div class="cart-quontity">
+    <P> 個 </P>
+    </div>
+
+    <div class="cart_delete-btn">
+    <%= button_to("カートから削除する", "/cart/#{cart.product_id}/delete", {method: "delete"}) %>
+    </div>
+
+   </div>
+  </section>
+  <% @sum += cart.products.price %>
+  <% end %>
+
+
+  <aside class="price-content">
+   <h2>カート内の合計</h2>
+   <h4 class="total-price-info">合計<%= @sum %> 円 （税込）
+   </h4>
+  </aside>
+
+  <div class="cart-main-bottom">
+   <a href="/purchase/top" class="btn message">購入手続きに進む</a>
+    <div class="cart-explain">
+    </div>
+  </div>
+ 
+ </div>
+</div>

@@ -1,0 +1,103 @@
+<div class="product-show-wrapper">
+ <div class="product-show-container">
+  <h1>商品詳細</h1>
+   <div class="product-show-main">
+
+    <div class="product-detail-left">
+     <img src="<%= "/logo_img/#{@product.img_name}"%>" class= "product-show-img-top">
+     <img src="<%= "/logo_img/#{@product.img_name}"%>" class= "product-show-img-bottom">
+    </div>
+   
+
+    <div class="product-detail-right">
+     <h2 class="product-detail-name"> 【TOPRO】<%= @product.name %> </h2>
+     <div class="product-show-action">
+      <P>いいね数<%= @product.favo_count %></P>
+     </div>
+    <div class="product-show-tastebox">
+    </div>
+    <div class="product-show-price">
+     <P>計<%= @product.price %> 円 （税込）</P>
+    </div>
+
+    <div class="to-cart-btn">
+    <%= form_tag("/products/cart") do %>
+     <input type="submit" value="カートに追加する">
+
+     <%end%>
+    </div>
+
+    <div class="to-cart_top-btn">
+    <%= link_to("/cart/top") do%>
+    <button class="btn btn-cart" >カートに移動する</button>
+    <%end%>
+   </div>
+
+    <div class="product-show-explain">
+    </div>
+
+   </div>
+  </div>
+
+ </div>
+</div>
+
+
+
+
+<div class="explain-top-wrapper">
+ <div class="explain-top-container">
+  <div class="explain">
+  </div>
+  
+
+ </div>
+</div>
+
+
+<div class="explain-bottom-wrapper">
+ <div class="explain-bottom-container">
+  <div class="explain">
+  </div>
+  
+
+ </div>
+</div>
+
+
+
+<div class="story-wrapper">
+ <div class="story-container">
+  <div class="story-top">
+   <h2>商品ストーリー</h2>
+  </div>
+  <div class="story-bottom">
+   <h2>商品ストーリー</h2>
+
+  </div>
+
+ </div>
+</div>
+
+
+
+  
+<div class="review-wrapper">
+ <div class="review-container">
+  <h2>フィードバック</h2>
+  <div class="review-rating">
+  </div>
+  <div class="review-btn">
+  </div>
+
+
+  <div class="reviews">
+  </div>
+  <div class="review-left">
+  </div>
+  <div class="review-right">
+  </div>
+
+ </div>
+</div>
+

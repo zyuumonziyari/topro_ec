@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SampleApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
+  </head>
+
+  <body>
+  <header>
+  <div class = "header-container">
+   <div class ="header-left">
+   <%= link_to image_tag("/logo_img/Toproロゴ.png"), '/' %>
+   </div>
+   <div class ="header-right">
+    <ul class ="header-menue">
+    <%if @current_user %>
+   
+    <li>
+     <%= link_to("商品ラインナップ", "/products/top") %>
+    </li>
+    <li>
+    <%= link_to("カート", "/cart/top") %>
+    </li>
+    <li>
+    <%= link_to("マイページ", "/users/#{@current_user.id}") %>
+    </li>
+    <li>
+    <%= link_to("ログアウト", "/logout", {method: "post"}) %>
+    </li>
+
+    <% else %>
+    <li>
+     <%= link_to("商品ラインナップ", "/products/top") %>
+    </li>
+    <li>
+    <%= link_to("カート", "/cart/top") %>
+    </li>
+    <li>
+    <%= link_to("ログイン", "/login") %>
+    </li>
+    <li>
+    <%= link_to("新規登録", "/signup") %>
+    </li>
+    <% end %>
+   </ul>
+  </div>
+ </div>
+
+ 
+ </header>
+
+ <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+
+    <%= yield %>
+
+
+
+  <footer>
+   <div class="footer-container">
+    <div class="footer-top">
+     <div class="footer-img">
+      <img src="/logo_img/Toproロゴ.png" >
+     </div>
+     <ul class ="footer-menue">
+      <li>
+       商品ラインナップ
+      </li>
+      <li>
+       カート
+      </li>
+      <li>
+       マイページ
+      </li>
+      <li>
+       ログイン
+      </li>
+      <li>
+       新規登録
+      </li>
+     </ul>
+    </div>
+
+    <div class="footer-bottom">
+     <div class="pay-img">
+      <img src="/" >
+      <img src="/" >
+      <img src="/" >
+     </div>
+
+     <div class="sns-img">
+      <img src="/" >
+      <img src="/" >
+      <img src="/" >
+      </div>
+      <p> © TOKYO PROTEIN, Inc. 2023.</p>
+     </div>
+    </div>
+
+  </footer>
+     </body>
+</html>

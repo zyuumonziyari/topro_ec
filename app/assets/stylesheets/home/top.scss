@@ -1,0 +1,233 @@
+
+body {
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  
+ 
+  
+  a {
+    text-decoration: none;
+    color:inherit;
+
+  }
+
+  h1{
+    font-size: 40px;
+    font-weight:500;
+}
+
+ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  p{
+    margin: 0;
+  }
+
+/* 共通レイアウト ================================ */
+
+
+header {
+    background-color: white;
+    height: 85px;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+ }
+
+ .header-container{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+ }
+ .header-left{
+    float: left;
+    padding: 20px 0px;
+ }
+
+.header-logo{
+    width: 70%;
+}
+
+.header-right{
+    padding: 20px 0px;
+    float: right;
+
+ }
+ .header-menue{
+    color: black;
+    line-height: 24px;
+
+ }
+ .header-menue li{
+    float: left;
+    padding-left: 30px;
+    font-size: 16px;
+ }
+ 
+ 
+ 
+ 
+ 
+ .top-wrapper {
+        padding-bottom: 20px;
+        text-align: center;
+        color: black;
+        background-color:white;
+        background-repeat: no-repeat;
+}
+
+.top-container{
+    background-image:url("/logo_img/home_backimg.png");
+    background-size: cover;
+    width: 100%;
+    margin: 0 auto;
+    height: 700px;
+    position: relative;
+
+}
+.top-container h2{
+    display: inline;
+    position: absolute;
+    top: 100px;
+    left: 840px;
+    color: #222222;
+    background: linear-gradient(transparent 70%, #CFDE28 10%,);
+
+    font-size: 64px;
+    font-family: Hiragino Mincho Pro;
+    font-weight:bold;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    margin:20px 0px;
+    transform: rotate(-10deg);
+
+}
+.top-container h3{
+    display: inline;
+    position: absolute;
+    top: 190px;
+    left: 880px;
+    color: #222222;
+    background: linear-gradient(transparent 70%, #CFDE28 30%);
+
+    font-size: 64px;
+    font-family: Hiragino Mincho Pro;
+    font-weight:bold;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    margin:20px 0px;
+    transform: rotate(-10deg);
+
+}
+
+
+
+.top-container p{
+    font-size: 24px;
+}
+
+
+
+
+
+
+.top-product-wrapper{
+    text-align: center;
+    height: 1500px;
+}
+.top-product-container{
+    padding: 0 180px;
+    
+}
+.contents{
+    padding-top: 60px;
+}
+.content{
+    float: left;
+    width: 33%;
+    padding-bottom: 90px;
+}
+.content-img{
+    position: relative;
+
+}
+.content-img p{
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    color: #eee;
+}
+.content-name{
+    width: 60%;
+    display: inline-block;
+    padding:10px 20px;
+}
+
+
+
+
+
+footer{
+    background-color: #F6F6F6;
+    height: 380px;
+    border-top: 1px solid #eee;
+    text-align: center;
+
+  
+}
+
+
+.footer-top{
+    padding-top: 56px;
+}
+
+
+
+.footer-menue {
+    font-size: 16px;
+    padding: 48px 0px;
+    border-bottom: 2px solid #137F1A;
+
+}
+
+.footer-menue li{
+    display: inline-block;
+    padding: 0px 35px;
+    font-size: 16px;
+}
+
+.footer-bottom{
+
+}
+.pay-img{
+    padding: 16px 0px;
+}
+
+.sns-img{
+
+}
+
+.footer-bottom p{
+    padding-top: 8px;
+}
+
+
+
+
+
+.flash {
+    padding: 10px 0;
+    color: white;
+    background: rgb(251, 170, 88);
+    text-align: center;
+    position: absolute;
+    top: 64px;
+    z-index: 10;
+    width: 100%;
+    border-radius: 0 0 2px 2px;
+    font-size: 14px;
+  }

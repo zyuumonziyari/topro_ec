@@ -1,0 +1,2 @@
+class AddPurchaseColumn < ApplicationRecord
+end

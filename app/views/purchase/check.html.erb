@@ -1,0 +1,85 @@
+<div class="cart-top-wrapper">
+ <div class="cart-top-container">
+  <h1>購入情報確認</h1>
+  </div>
+</div>
+
+<div class="cart-main-wrapper">
+ <div class="cart-main-container">
+
+ <% @sum = 0 %>
+ <% @cart_product.each do |cart| %>
+  <section class="cart-content">
+   <div class="cart-left">
+   <img src="<%= "/logo_img/#{cart.products.img_name}"%>" width="140" height="140" class= "cart-product-img">
+   </div>
+   <div class="cart-right">
+    <h3 class="cart-name"><%= cart.products.name %> </h3>
+    <div class="cart-action">
+    </div>
+    <div class="cart-tastebox">
+    </div>
+    <div class="cart-price">
+    <P>計<%= cart.products.price %> 円 （税込）</P>
+    </div>
+   </div>
+  </section>
+  <% @sum += cart.products.price %>
+  <% end %>
+
+
+  <aside class="user-content">
+   <h2>購入者情報</h2>
+   <div class="cart-user-info">
+    <div class="form-body">     
+    <% if @current_user %>
+     <p>氏名</p>
+     <%= @current_user.name %>
+     <p>メールアドレス</p>
+     <%= @current_user.email %>
+    <% else %>
+     <p>氏名</p>
+     <%=  @purchase.name %>
+     <p>メールアドレス</p>
+     <%=  @purchase.email %>
+    <%end%>
+
+     <p>住所</p>
+     <%= @purchase.address %>
+
+       <p>カード使用期限</p>
+       <%=  @deal.due_number %>
+       <p>カード名義人</p>
+       <%=  @deal.card_name%>
+      
+      <p>カード番号</p>
+      <%= @deal.card_number %>
+      <p>暗証番号</p>
+      <%= @deal.card_password  %>
+      <div class="cart_delete-btn">
+      <%= button_to("購入する", "/purchase/action", {method: "delete"}) %>
+      </div>
+     
+    </div>
+   </div>
+   <a href="/cart/top" class="btn message">カートに戻る</a>
+  </aside>
+
+
+
+
+
+
+
+  <div class="price-content">
+   <h3>カート内の合計</h3>
+   <h4 class="total-price-info">合計<%= @sum %> 円 （税込）
+   </h4>
+  </div>
+
+ 
+  
+  
+ 
+ </div>
+</div>

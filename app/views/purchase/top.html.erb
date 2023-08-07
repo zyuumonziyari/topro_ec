@@ -1,0 +1,82 @@
+<div class="cart-top-wrapper">
+ <div class="cart-top-container">
+  <h1>購入手続き</h1>
+  </div>
+</div>
+
+<div class="cart-main-wrapper">
+ <div class="cart-main-container">
+
+ <% @sum = 0 %>
+ <% @cart_product.each do |cart| %>
+  <section class="cart-content">
+   <div class="cart-left">
+   <img src="<%= "/logo_img/#{cart.products.img_name}"%>" width="140" height="140" class= "cart-product-img">
+   </div>
+   <div class="cart-right">
+    <h3 class="cart-name"><%= cart.products.name %> </h3>
+    <div class="cart-action">
+    </div>
+    <div class="cart-tastebox">
+    </div>
+    <div class="cart-price">
+    <P>計<%= cart.products.price %> 円 （税込）</P>
+    </div>
+   </div>
+  </section>
+  <% @sum += cart.products.price %>
+  <% end %>
+
+
+  <aside class="user-content">
+   <h2>購入者情報の入力</h2>
+   <div class="cart-user-info">
+    <div class="form-body">     
+    <% if @error_message %>
+    <div class="form-error">
+      <%= @error_message %>
+    </div>
+    <% end %>
+
+     <%= form_tag("/purchase/create") do %>
+
+      <% if @current_user %>
+       <p>氏名</p>
+       <input name="name" value="<%= @current_user.name %>">
+       <p>メールアドレス</p>
+       <input name="email" value="<%= @current_user.email %>">
+      <%else%>
+       <p>氏名</p>
+       <input name="name" value="<%=  @purchase.name %>">
+       <p>メールアドレス</p>
+       <input name="email" value="<%=  @purchase.email%>">
+      <%end%>
+
+      <p>住所</p>
+      <input  name="address" value="<%=  %>">
+      <input type="submit" value="決済へ進む">
+
+     <% end %>
+    </div>
+   </div>
+   <a href="/cart/top" class="btn message">カートに戻る</a>
+  </aside>
+
+
+
+
+
+
+
+  <div class="price-content">
+   <h3>カート内の合計</h3>
+   <h4 class="total-price-info">合計<%= @sum %> 円 （税込）
+   </h4>
+  </div>
+
+ 
+  
+  
+ 
+ </div>
+</div>

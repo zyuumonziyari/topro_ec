@@ -1,0 +1,23 @@
+<div class="mypage-wrapper">
+ <div class="mypage-container">
+  <h1>マイページ</h1>
+ 
+  <div class="profiel-form">
+   <div class="form-body">
+     <p>ユーザー名</p>
+     <%= @user.name %>
+     <p>メールアドレス</p>
+     <%= @user.email %>
+     <p>パスワード</p>
+     <%= @user.password %>
+     <div class="to-edit-btn">
+      <%= link_to("/users/#{@user.id}/edit") do%>
+        <button class="btn btn-profiel" >プロフィールを編集する</button>
+    
+      <%end%>
+     </div>
+
+   </div>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="cart-top-wrapper">
+ <div class="cart-top-container">
+  <h1>購入手続き</h1>
+  </div>
+</div>
+
+<div class="cart-main-wrapper">
+ <div class="cart-main-container">
+
+ <% @sum = 0 %>
+ <% @cart_product.each do |cart| %>
+  <section class="cart-content">
+   <div class="cart-left">
+   <img src="<%= "/logo_img/#{cart.products.img_name}"%>" width="140" height="140" class= "cart-product-img">
+   </div>
+   <div class="cart-right">
+    <h3 class="cart-name"><%= cart.products.name %> </h3>
+    <div class="cart-action">
+    </div>
+    <div class="cart-tastebox">
+    </div>
+    <div class="cart-price">
+    <P>計<%= cart.products.price %> 円 （税込）</P>
+    </div>
+   </div>
+  </section>
+  <% @sum += cart.products.price %>
+  <% end %>
+
+
+  <aside class="user-content">
+   <h2>決済情報の入力</h2>
+   <div class="cart-user-info">
+    <div class="form-body">     
+    <% if @error_message %>
+    <div class="form-error">
+      <%= @error_message %>
+    </div>
+    <% end %>
+
+     <%= form_tag("/purchase/credit") do %>
+
+      
+       <p>カード使用期限</p>
+       <input name="due_number" value="<%=  @deal.due_number %>">
+       <p>カード名義人</p>
+       <input name="card_name" value="<%=  @deal.card_name%>">
+      
+      <p>カード番号</p>
+      <input  name="card_number" value="<%= @deal.card_number %>">
+      <p>暗証番号</p>
+      <input  type="password" name="card_password" value="<%= @deal.card_password  %>">
+      <input type="submit" value="確認へ進む">
+
+     <% end %>
+    </div>
+   </div>
+   <a href="/cart/top" class="btn message">カートに戻る</a>
+  </aside>
+
+
+
+
+
+
+
+  <div class="price-content">
+   <h3>カート内の合計</h3>
+   <h4 class="total-price-info">合計<%= @sum %> 円 （税込）
+   </h4>
+  </div>
+
+ 
+  
+  
+ 
+ </div>
+</div>
